@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "tw-animate-css";
+
+
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-source-sans-pro);
+  --font-alt: var(--font-inter);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --radius: 0.65rem;
+
+  /* 🌿 Black & White Core Theme */
+  --background: oklch(0.99 0 95); /* White background */
+  --foreground: oklch(0.18 0.01 270); /* Deep black text */
+
+  /* UI Layers */
+  --card: oklch(1 0 95);
+  --card-foreground: oklch(0.18 0.01 270);
+  --popover: oklch(1 0 95);
+  --popover-foreground: oklch(0.18 0.01 270);
+
+  /* 🖤 Brand Accent – clean jet black */
+  --primary: oklch(0.20 0.01 270);
+  --primary-foreground: oklch(0.98 0.01 95);
+
+  /* Grayscale support */
+  --secondary: oklch(0.92 0.01 270);
+  --secondary-foreground: oklch(0.25 0.01 270);
+
+  --accent: oklch(0.20 0.01 270);
+  --accent-foreground: oklch(1 0 0);
+
+  /* Borders, muted tones */
+  --border: oklch(0.90 0.01 270);
+  --muted: oklch(0.95 0.01 270);
+  --muted-foreground: oklch(0.40 0.01 270);
+
+  --input: var(--border);
+  --ring: var(--primary);
+
+  /* ✍️ Fonts */
+  --font-source-sans-pro: "Source Sans Pro", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* 🌙 Dark Mode */
+.dark {
+  --background: oklch(0.15 0.01 270);
+  --foreground: oklch(0.95 0.01 260);
+
+  --card: oklch(0.18 0.01 270);
+  --card-foreground: oklch(0.95 0.01 260);
+
+  --primary: oklch(0.98 0.01 95);
+  --primary-foreground: oklch(0.15 0.01 270);
+
+  --secondary: oklch(0.25 0.01 270);
+  --secondary-foreground: oklch(0.98 0.01 260);
+
+  --accent: oklch(0.98 0.01 95);
+  --accent-foreground: oklch(0.15 0.01 270);
+
+  --border: oklch(0.30 0.01 270);
+  --muted: oklch(0.25 0.01 270);
+  --muted-foreground: oklch(0.75 0.01 270);
+
+  --ring: oklch(0.98 0.01 95);
+}
+
+/* ------------------------------
+   Base Styles
+------------------------------ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-source-sans-pro);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
+  }
+  *:focus-visible {
+    @apply ring-1 ring-primary/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+/* ------------------------------
+   Buttons
+------------------------------ */
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+@media (min-width: 640px) {
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+.btn-primary:hover {
+  background-color: oklch(0.25 0.01 270);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+@media (min-width: 640px) {
+  .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+}
+
+/* Icon Button */
+.btn-icon {
+  background-color: color-mix(in oklch, var(--card) 80%, black 10%);
+  color: var(--foreground);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+.btn-icon:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+}
+@media (max-width: 640px) {
+  .btn-icon {
+    padding: 0.35rem;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-in-out;
+}
+/* 🟡 Swiper Pagination + Navigation Custom Colors */
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  background-color: var(--primary-foreground) !important; /* your premium color variable */
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-foreground) !important;
+  opacity: 1;
+}
+
+/* Navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+    opacity:0.5 !important; /* optional hover color */
+  color: var(--primary-foreground) !important; /* same premium color */
+
+  transition: color 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    color: var(--primary-foreground) !important; /* same premium color */
+opacity: 1 !important;
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Graphic Tees",
+    "slug": "graphic-tees",
+    "image": "/assets/images/categories/graphic-tees.jpg",
+    "description": "Bold, expressive designs to make a statement."
+  },
+  {
+    "id": 2,
+    "name": "Minimal Series",
+    "slug": "minimal-series",
+    "image": "/assets/images/categories/minimal-series.jpg",
+    "description": "Clean and simple designs for everyday wear."
+  },
+  {
+    "id": 3,
+    "name": "Oversized Fits",
+    "slug": "oversized-fits",
+    "image": "/assets/images/categories/oversized.jpg",
+    "description": "Comfortable oversized tees with relaxed silhouettes."
+  },
+  {
+    "id": 4,
+    "name": "Monochrome Drop",
+    "slug": "monochrome",
+    "image": "/assets/images/categories/monochrome.jpg",
+    "description": "Timeless black and white styles for any mood."
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Urban Isolation Tee",
+    "price": 999,
+    "category": "Graphic T-Shirts",
+    "image": "/assets/products/tshirt1.jpg",
+    "description": "A sleek black tee that blends minimalism with street style. Crafted with 100% premium cotton for comfort and durability.",
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": true
+    
+  },
+  {
+    "id": 2,
+    "name": "Minimal Drop Tee",
+    "price": 1099,
+    "category": "Graphic T-Shirts",
+    "image": "/assets/products/tshirt2.jpg",
+    "description": "Minimal front design with a bold back print. Designed to represent modern isolation culture.",
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Black Noise Tee",
+    "price": 1199,
+    "category": "Graphic T-Shirts",
+    "image": "/assets/products/tshirt3.jpg",
+    "description": "Grunge-inspired typography with a soft feel. Best paired with denims or cargos for an effortless look.",
+    "sizes": ["M", "L", "XL"],
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Retro Fade Tee",
+    "price": 999,
+    "category": "Graphic T-Shirts",
+    "image": "/assets/products/tshirt4.jpg",
+    "description": "Retro orange gradient print on classic white. Lightweight and breathable summer essential.",
+    "sizes": ["S", "M", "L", "XL"],
+    "featured": true
+  }
+]
