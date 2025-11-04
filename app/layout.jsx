@@ -2,7 +2,7 @@ import '@/app/globals.css';
 
 import { Space_Grotesk, Inter } from "next/font/google";
 import Navbar from '@/components/ui/Navbar';
-import ExpandableFooter from '@/components/ui/ExpandableFooter';
+import Footer from '@/components/ui/Footer';
 
 
 const spaceGrotesk = Space_Grotesk({
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className="font-inter bg-background text-foreground">
        <Navbar />
         {children}
-       <ExpandableFooter />
+       <Footer />
       </body>
     </html>
   );

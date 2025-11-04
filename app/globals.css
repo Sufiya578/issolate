@@ -122,7 +122,7 @@ body {
 .btn-primary {
   background-color: var(--primary);
   color: var(--primary-foreground);
-  border-radius: 9999px;
+  /* border-radius: 9999px; */
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
@@ -137,15 +137,16 @@ body {
 }
 .btn-primary:hover {
   background-color: oklch(0.25 0.01 270);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+  opacity: 0.8;
 }
 
 /* Outline Button */
 .btn-outline {
   border: 1px solid var(--primary);
   color: var(--primary);
-  border-radius: 9999px;
+  /* border-radius: 9999px; */
   font-weight: 600;
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
@@ -156,28 +157,33 @@ body {
   .btn-outline {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+      transition: all 0.3s ease;
+
   }
 }
 .btn-outline:hover {
   background-color: var(--primary);
   color: var(--primary-foreground);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+  opacity:0.8;
+
 }
 
 /* Icon Button */
 .btn-icon {
   background-color: color-mix(in oklch, var(--card) 80%, black 10%);
   color: var(--foreground);
-  border-radius: 9999px;
+  /* border-radius: 9999px; */
   padding: 0.5rem;
   transition: all 0.3s ease;
 }
 .btn-icon:hover {
   background-color: var(--primary);
   color: var(--primary-foreground);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   box-shadow: 0 4px 12px oklch(0.2 0.01 270 / 0.3);
+  opacity:0.5;
 }
 @media (max-width: 640px) {
   .btn-icon {
