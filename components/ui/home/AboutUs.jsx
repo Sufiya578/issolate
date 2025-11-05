@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import aboutus from '@/public/assets/images/brand/aboutus-img.jpg';
+import aboutus from '@/public/assets/images/about/aboutus-img.webp';
 
 import Link from "next/link";
 

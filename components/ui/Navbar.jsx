@@ -56,12 +56,27 @@ export default function Navbar() {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/catalog?query=${searchQuery}`);
+      router.push(`/shop?query=${searchQuery}`);
       setSearchQuery("");
       setSearchOpen(false);
     }
   };
+const [cartCount, setCartCount] = useState(0);
 
+useEffect(() => {
+  const updateCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    setCartCount(totalItems);
+  };
+
+  updateCartCount();
+
+  // Update when storage changes (across tabs)
+  window.addEventListener("storage", updateCartCount);
+
+  return () => window.removeEventListener("storage", updateCartCount);
+}, []);
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       {/* 🖤 Black Top Bar */}
@@ -107,7 +122,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-md font-normal text-gray-700 hover:text-primary hover:underline transition"
+                  className="text-md font-semibold text-gray-700 hover:text-primary hover:underline transition"
                 >
                   {link.name}
                 </Link>
@@ -148,11 +163,18 @@ export default function Navbar() {
             </button>
 
             {/* Cart */}
-            <ShoppingBag className="w-5 h-5  cursor-pointer hover:text-primary transition" />
-
+ <Link href="/cart" className="relative">
+  <ShoppingBag className="w-5 h-5 cursor-pointer hover:text-primary transition" />
+  {cartCount > 0 && (
+    <span className="absolute -top-2 -right-2 bg-black text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
+      {cartCount}
+    </span>
+  )}
+</Link>
             {/* User Icon (desktop) */}
-            <User className="hidden md:block w-5 h-5  cursor-pointer hover:text-primary transition" />
-          </div>
+<Link href="/login">
+  <User className="hidden md:block w-5 h-5 cursor-pointer hover:text-primary transition" />
+</Link>          </div>
         </div>
       </div>
 
@@ -168,7 +190,7 @@ export default function Navbar() {
         />
         <div className="relative bg-white w-4/5 max-w-xs h-[calc(100vh-4rem)] shadow-xl flex flex-col justify-between px-6 py-8">
           <div>
-            <nav className="flex flex-col space-y-6 text-md font-normal text-gray-700 ">
+            <nav className="flex flex-col space-y-6 text-md font-semibold text-gray-700 ">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}

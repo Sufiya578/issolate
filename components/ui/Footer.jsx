@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Instagram, Facebook, X, Mail } from "lucide-react";
 
@@ -18,25 +20,33 @@ export default function Footer() {
 
               {/* Social Icons (only visible on mobile & tablet) */}
               <div className="flex space-x-3 text-muted-foreground lg:hidden">
-                <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300">
+                <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300">
                   <Instagram className="w-5 h-5" />
                 </Link>
-                <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300">
+                <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300">
                   <Facebook className="w-5 h-5" />
                 </Link>
-                <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300">
+                <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300">
                   <X className="w-5 h-5" />
                 </Link>
-                <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300">
+                <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300">
                   <Mail className="w-5 h-5" />
                 </Link>
               </div>
             </div>
 
-            <p className="text-sm sm:text-base opacity-90 leading-relaxed">
-              Drop your isolation in style. Premium men’s tees made for comfort,
-              confidence, and expression.
+            {/* Summarized Brand Text */}
+            <p className=" opacity-90 leading-relaxed mb-3 text-xs sm:text-sm">
+              Premium men’s tees designed for comfort, confidence, and effortless style.
             </p>
+
+            {/* Contact Info */}
+            <div className=" opacity-90 leading-relaxed space-y-1 text-xs sm:text-sm">
+              {/* <p>Email: <a href="mailto:info@iisolate.com" className="underline text-background">info@iisolate.com</a></p> */}
+              <p>Address: PB Road Jugsalai, Jamshedpur -831006</p>
+              <p>Phone: <a href="tel:+917761883497" className="underline text-background">+91 7761883497</a></p>
+
+            </div>
           </div>
 
           {/* --- Quick Links + Support --- */}
@@ -47,10 +57,10 @@ export default function Footer() {
                 Quick Links
               </h3>
               <ul className="space-y-2 text-xs sm:text-sm">
-                <li><Link href="/" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Home</Link></li>
-                <li><Link href="/shop" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Shop</Link></li>
-                <li><Link href="/about" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">About Us</Link></li>
-                <li><Link href="/contact" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Contact</Link></li>
+                <li><Link href="/" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Home</Link></li>
+                <li><Link href="/shop" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Shop</Link></li>
+                <li><Link href="/about" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">About Us</Link></li>
+                <li><Link href="/contact" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Contact</Link></li>
               </ul>
             </div>
 
@@ -60,9 +70,9 @@ export default function Footer() {
                 Support
               </h3>
               <ul className="space-y-2 text-xs sm:text-sm">
-                <li><Link href="/returns" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Returns & Exchange</Link></li>
-                <li><Link href="/privacy" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="opacity-90  hover:underline hover:text-background hover:ml-1 transition-all duration-300">Fraud & Scam Awareness</Link></li>
+                <li><Link href="/ReturnExchange" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Returns & Exchange</Link></li>
+                <li><Link href="/PrivacyPolicy" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Privacy Policy</Link></li>
+                <li><Link href="/fraudScam" className="opacity-90 hover:underline hover:text-background hover:ml-1 transition-all duration-300">Fraud & Scam Awareness</Link></li>
               </ul>
             </div>
           </div>
@@ -71,17 +81,17 @@ export default function Footer() {
           <div className="hidden lg:block">
             <h3 className="font-semibold mb-4">Follow us</h3>
             <div className="flex space-x-4 text-muted-foreground">
-              <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300"><Instagram className="w-5 h-5" /></Link>
-              <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300"><Facebook className="w-5 h-5" /></Link>
-              <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300"><X className="w-5 h-5" /></Link>
-              <Link href="#" className="text-background hover:opacity:90 hover:-translate-y-1 transition-all duration-300"><Mail className="w-5 h-5" /></Link>
+              <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300"><Instagram className="w-5 h-5" /></Link>
+              <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300"><Facebook className="w-5 h-5" /></Link>
+              <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300"><X className="w-5 h-5" /></Link>
+              <Link href="#" className="text-background hover:opacity-90 hover:-translate-y-1 transition-all duration-300"><Mail className="w-5 h-5" /></Link>
             </div>
           </div>
         </div>
 
         {/* === Bottom Line === */}
         <div className="text-center text-xs sm:text-sm text-background border-t border-border mt-5 pt-5">
-          © {new Date().getFullYear()} IISO·LATE. All rights reserved.
+          © {new Date().getFullYear()} ISSO·LATE. All rights reserved.
         </div>
       </div>
     </footer>

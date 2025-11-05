@@ -9,22 +9,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-import Hero1 from "@/public/assets/images/hero/tshirt_hero.jpeg";
-import Hero2 from "@/public/assets/images/hero/tshirt_hero-2.jpeg";
-import Hero3 from "@/public/assets/images/hero/tshirt_hero-3.jpeg";
-import Hero4 from "@/public/assets/images/hero/tshirt_hero-4.jpeg";
-import Hero5 from "@/public/assets/images/hero/tshirt_hero-5.jpeg";
-import Hero6 from "@/public/assets/images/hero/tshirt_hero-6.jpeg";
+import Hero1 from "@/public/assets/images/hero/hero-1.webp";
+import Hero2 from "@/public/assets/images/hero/hero-2.webp";
+import Hero3 from "@/public/assets/images/hero/hero-3.webp";
+import Hero4 from "@/public/assets/images/hero/hero-4.webp";
+import Hero5 from "@/public/assets/images/hero/hero-5.webp";
 
 export default function HeroSection() {
-  const heroImages = [Hero1, Hero2, Hero3, Hero4, Hero5, Hero6];
+  const heroImages = [Hero1, Hero2, Hero3, Hero4, Hero5];
 
   const heroTexts = [
     "Drop Your Isolation in Style.",
     "Streetwear That Speaks for You.",
     "Every Drop Tells a Story.",
     "Limited Edition. Unlimited Vibes.",
-    "Your Style, Your Statement.",
     "Made for Those Who Stand Out.",
   ];
 
